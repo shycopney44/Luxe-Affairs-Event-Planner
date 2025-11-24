@@ -1,0 +1,42 @@
+/* Tailwind base, components, and utilities */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global body styles */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f0f4f8; /* light gray background */
+  color: #1a202c; /* default text color */
+}
+
+/* Global code styles */
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+  background-color: #edf2f7;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+/* Default container for pages */
+.main-container {
+  @apply container mx-auto px-4 md:px-8 lg:px-16;
+}
+
+/* Default section spacing */
+.section {
+  @apply py-6 md:py-8 lg:py-12;
+}
+
+/* Card default style */
+.card {
+  @apply bg-white shadow rounded p-4 mb-4;
+}
+
+
