@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 export default function Gallery() {
   const [selectedImage, setSelectedImage] = useState(null);
+  const [currentIndex, setCurrentIndex] = useState(null);
+  const scrollPosition = useRef(0);
 
   const galleryImages = [
     { src: "/images/banquet-bg.jpeg.webp", alt: "Banquet Elegance 1" },
@@ -16,49 +18,121 @@ export default function Gallery() {
     { src: "/images/banquet-bg32.jpeg", alt: "Banquet Elegance 32" },
   ];
 
+  const openImage = (img, index) => {
+    scrollPosition.current = window.scrollY;
+    setSelectedImage(img);
+    setCurrentIndex(index);
+    document.body.style.overflow = "hidden";
+  };
+
+  const closeImage = () => {
+    setSelectedImage(null);
+    setCurrentIndex(null);
+    document.body.style.overflow = "auto";
+
+    window.scrollTo({
+      top: scrollPosition.current,
+      behavior: "instant",
+    });
+  };
+
+  // ⭐ BACK BUTTON FIX — close modal instead of navigating away
+  useEffect(() => {
+    if (selectedImage) {
+      window.history.pushState({ modal: true }, "");
+
+      const handlePopState = () => {
+        closeImage();
+      };
+
+      window.addEventListener("popstate", handlePopState);
+
+      return () => {
+        window.removeEventListener("popstate", handlePopState);
+      };
+    }
+  }, [selectedImage]);
+
+  const showNext = () => {
+    const nextIndex = (currentIndex + 1) % galleryImages.length;
+    setCurrentIndex(nextIndex);
+    setSelectedImage(galleryImages[nextIndex]);
+  };
+
+  const showPrev = () => {
+    const prevIndex =
+      (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+    setCurrentIndex(prevIndex);
+    setSelectedImage(galleryImages[prevIndex]);
+  };
+
   return (
-    <div className="min-h-screen bg-white px-6 pt-32 pb-12">
-      {/* Header */}
-      <h1 className="text-4xl md:text-5xl font-bold text-center text-purple-700 mb-12">
+    <div className="relative min-h-screen text-white px-6 pt-32 pb-12 z-10">
+
+      {/* ⭐ UPDATED HEADER (Event Styles Typography) */}
+      <h1 className="text-4xl md:text-5xl font-extrabold text-pink-300 text-center mb-12 drop-shadow-xl">
         Gallery
       </h1>
 
-      {/* Gallery Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
         {galleryImages.map((img, index) => (
-          <button
+          <div
             key={index}
-            onClick={() => setSelectedImage(img)}
-            className="relative group w-full h-64 overflow-hidden rounded-xl shadow-md focus:outline-none"
+            className="relative group w-full h-64 overflow-hidden rounded-xl shadow-xl backdrop-blur-xl bg-white/10 border border-white/20 cursor-pointer"
+            onClick={() => openImage(img, index)}
           >
             <img
               src={img.src}
               alt={img.alt}
-              className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
             />
-            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-              <span className="text-white text-lg font-semibold">{img.alt}</span>
-            </div>
-          </button>
+            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          </div>
         ))}
       </div>
 
-      {/* Modal Viewer */}
       {selectedImage && (
-        <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50">
-          <div className="relative max-w-4xl w-full px-4">
-            <button
-              onClick={() => setSelectedImage(null)}
-              className="absolute top-4 right-4 text-white text-3xl font-bold hover:text-pink-300"
-            >
-              &times;
-            </button>
-            <img
-              src={selectedImage.src}
-              alt={selectedImage.alt}
-              className="w-full h-auto max-h-[80vh] object-contain rounded-xl shadow-lg"
-            />
-            <p className="text-center text-white mt-4 text-lg">{selectedImage.alt}</p>
+        <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-[99999]">
+
+          <div className="max-w-5xl w-full px-4">
+
+            {/* X BUTTON — TOP LEFT OUTSIDE IMAGE */}
+            <div className="flex justify-start mb-4">
+              <button
+                onClick={closeImage}
+                className="text-white text-5xl font-bold hover:text-pink-300 drop-shadow-xl"
+              >
+                ×
+              </button>
+            </div>
+
+            {/* CLEAN ROW: left arrow — image — right arrow */}
+            <div className="flex items-center justify-center gap-6">
+
+              {/* LEFT ARROW */}
+              <button
+                onClick={showPrev}
+                className="text-white text-5xl font-bold hover:text-pink-300 drop-shadow-xl"
+              >
+                ‹
+              </button>
+
+              {/* IMAGE */}
+              <img
+                src={selectedImage.src}
+                alt={selectedImage.alt}
+                className="w-full max-w-3xl h-[60vh] object-cover rounded-xl shadow-2xl"
+              />
+
+              {/* RIGHT ARROW */}
+              <button
+                onClick={showNext}
+                className="text-white text-5xl font-bold hover:text-pink-300 drop-shadow-xl"
+              >
+                ›
+              </button>
+
+            </div>
           </div>
         </div>
       )}

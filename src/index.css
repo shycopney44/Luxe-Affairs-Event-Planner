@@ -1,42 +1,108 @@
-/* Tailwind base, components, and utilities */
+/* ============================
+   Tailwind Directives (REQUIRED)
+============================ */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Global body styles */
-body {
+/* ============================
+   Global Reset
+============================ */
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ============================
+   Typography + Body
+============================ */
+body {
+  font-family: "Inter", "Poppins", sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: #f0f4f8; /* light gray background */
-  color: #1a202c; /* default text color */
+  background: transparent !important;
+  color: white;
 }
 
-/* Global code styles */
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-  background-color: #edf2f7;
-  padding: 2px 4px;
-  border-radius: 4px;
+/* ============================
+   Header + Footer Transparency
+============================ */
+header,
+footer {
+  background-color: transparent !important;
+  border: none !important;
 }
 
-/* Default container for pages */
-.main-container {
-  @apply container mx-auto px-4 md:px-8 lg:px-16;
+/* =====================================================
+   PARTNER SLIDER — TRUE SEAMLESS (ZERO GLITCH VERSION)
+===================================================== */
+
+/* Marquee container */
+.marquee {
+  display: flex;
+  width: max-content;
+  animation: marqueeScroll 35s linear infinite;
+  will-change: transform;
 }
 
-/* Default section spacing */
-.section {
-  @apply py-6 md:py-8 lg:py-12;
+/* Pause on hover (luxury effect) */
+.marquee:hover {
+  animation-play-state: paused;
 }
 
-/* Card default style */
-.card {
-  @apply bg-white shadow rounded p-4 mb-4;
+/* Logo cards */
+.logo-card {
+  flex: 0 0 auto;
+  width: 208px;        /* matches w-52 */
+  height: 128px;       /* matches h-32 */
+  margin-right: 64px;  /* replaces gap-16 */
+  background: white;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease;
 }
 
+/* Subtle luxury hover */
+.logo-card:hover {
+  transform: scale(1.05);
+}
 
+/* Logo image control */
+.logo-img {
+  max-height: 64px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Smooth GPU Animation */
+@keyframes marqueeScroll {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+/* ============================
+   Responsive Scroll Speed
+============================ */
+@media (max-width: 1024px) {
+  .marquee {
+    animation-duration: 40s;
+  }
+}
+
+@media (max-width: 768px) {
+  .marquee {
+    animation-duration: 50s;
+  }
+
+  .main-container {
+    padding: 0 1rem;
+  }
+}

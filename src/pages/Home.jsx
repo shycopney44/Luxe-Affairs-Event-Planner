@@ -1,208 +1,278 @@
 import React from "react";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import BackgroundSlideshow from "../components/BackgroundSlideshow";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen flex flex-col">
-      {/* Background Slideshow */}
-      <BackgroundSlideshow />
+    <div className="relative min-h-screen flex flex-col text-white">
 
-      {/* Overlay Content */}
-      <div className="absolute inset-0 z-10 flex flex-col">
-        {/* Fixed Header */}
-        <Header />
+      {/* Spacer for fixed header */}
+      <div className="h-24" />
 
-        {/* Spacer to offset fixed header height */}
-        <div className="h-20" />
+      {/* HERO SECTION */}
+      <div className="text-center px-4 space-y-6 mb-24">
+        <h1 className="text-6xl md:text-7xl font-extrabold text-pink-300 drop-shadow-xl bg-black/40 px-8 py-6 rounded-2xl">
+          Welcome to <span className="text-white drop-shadow-xl">Luxe Affairs</span>
+        </h1>
 
-        {/* Main Content */}
-        <main className="flex-grow flex flex-col items-center justify-center text-white text-center px-4 pt-32 space-y-10 animate-fadeIn">
-          {/* Hero */}
-          <h1 className="text-6xl md:text-7xl font-extrabold tracking-tight drop-shadow-2xl bg-black/40 px-8 py-6 rounded-2xl shimmer-text pulse-glow animate-zoomIn">
-            Welcome to <span className="text-pink-300">Luxe Affairs</span>
-          </h1>
+        <p className="text-2xl md:text-3xl font-bold text-white/90 drop-shadow-xl max-w-4xl mx-auto bg-black/30 px-8 py-6 rounded-xl">
+          Luxe Affairs is where intentional celebration meets elevated design.  
+          From intimate gatherings to large‑scale productions, we curate experiences 
+          that feel effortless, cinematic, and unforgettable.
+        </p>
+      </div>
 
-          {/* Masterclass Statement */}
-          <p className="text-2xl md:text-3xl font-bold max-w-5xl bg-black/30 px-8 py-6 rounded-xl drop-shadow-xl animate-fadeIn delay-200">
-            Welcome to Luxe Affairs — where unforgettable experiences begin. <br />
-            Join our upcoming masterclasses and learn how to lead with style, precision, and impact.
+      {/* MASTERCLASS COMING SOON */}
+      <div className="text-center mb-8 px-4">
+        <h2 className="text-4xl md:text-5xl font-extrabold text-pink-300 drop-shadow-xl">
+          Masterclass Coming Soon
+        </h2>
+      </div>
+
+      {/* MASTERCLASS INTRO TEXT */}
+      <div className="text-center max-w-4xl mx-auto mb-24 px-4">
+        <p className="text-xl md:text-2xl font-bold text-white/90 leading-relaxed drop-shadow-xl bg-black/30 px-6 py-6 rounded-xl">
+          A new standard in event mastery is on the horizon.  
+          The Luxe Affairs Masterclass distills years of luxury‑grade execution, intentional design, 
+          and real‑world experience into a transformative learning experience for planners and creative 
+          entrepreneurs ready to rise.
+        </p>
+
+        <p className="text-lg md:text-xl font-semibold text-white/80 mt-6 leading-relaxed drop-shadow-xl bg-black/20 px-6 py-4 rounded-xl">
+          This program sharpens your eye, elevates your process, and strengthens your confidence—so you can 
+          plan with clarity, lead with excellence, and build a brand rooted in legacy.  
+          Your evolution begins soon. Watch the preview below.
+        </p>
+      </div>
+
+      {/* YouTube Video */}
+      <div className="w-full max-w-6xl mx-auto px-4 mb-24">
+        <div className="w-full aspect-video rounded-2xl shadow-2xl overflow-hidden">
+          <iframe
+            className="w-full h-full"
+            src="https://www.youtube.com/embed/Rw2Vgg7wG6g?autoplay=1&mute=1&controls=1&rel=0&modestbranding=1"
+            title="Event Promo Video"
+            frameBorder="0"
+            allow="autoplay; encrypted-media"
+            allowFullScreen
+          ></iframe>
+        </div>
+      </div>
+
+      {/* ABOUT SECTION */}
+      <section className="w-full flex justify-center px-4 md:px-0 mb-24">
+        <div className="max-w-5xl text-center bg-black/40 px-8 py-12 rounded-2xl drop-shadow-2xl">
+          <h2 className="text-5xl md:text-6xl font-extrabold text-pink-300 drop-shadow-xl mb-8">
+            About Luxe Affairs
+          </h2>
+
+          <p className="text-2xl font-bold leading-relaxed drop-shadow-xl mb-6">
+            Luxe Affairs is more than an event planning company — it is a sanctuary for
+            intentional celebration. Rooted in Charlotte and expanding with vision and
+            purpose, we specialize in crafting experiences that feel cinematic, elevated,
+            and emotionally resonant.
           </p>
 
-          {/* Promo Video */}
-          <div className="w-full max-w-[90vw] aspect-video animate-fadeIn delay-300 px-4 md:px-0">
-            <iframe
-              className="w-full h-full rounded-xl shadow-2xl"
-              src="https://www.youtube.com/embed/Rw2Vgg7wG6g?autoplay=1&mute=1&controls=1&rel=0&modestbranding=1"
-              title="Event Promo Video"
-              frameBorder="0"
-              allow="autoplay; encrypted-media"
-              allowFullScreen
-            ></iframe>
-          </div>
+          <p className="text-2xl font-bold leading-relaxed drop-shadow-xl mb-6">
+            Every event we design is guided by a philosophy of clarity and legacy. We
+            believe that moments should be felt, not just seen — that ambiance, detail,
+            and storytelling work together to create experiences that linger long after
+            the lights fade. From intimate gatherings to large‑scale productions, our
+            approach blends luxury coordination, refined aesthetics, and seamless
+            execution.
+          </p>
 
-          {/* About Section */}
-          <section className="w-full flex justify-center px-4 md:px-0 mb-20">
-            <div className="max-w-5xl text-center bg-black/40 text-white px-8 py-12 rounded-2xl drop-shadow-2xl animate-fadeIn delay-500">
-              <h2 className="text-6xl md:text-7xl font-extrabold tracking-tight shimmer-text pulse-glow mb-8">
-                About <span className="text-pink-300">Luxe Affairs</span>
-              </h2>
-              <p className="text-2xl md:text-3xl font-semibold leading-relaxed mb-6">
-                Headquartered in Charlotte, North Carolina, Luxe Affairs is a premier event planning firm specializing in high-end experiences that blend elegance, innovation, and emotional impact. For over a decade, we’ve transformed ordinary gatherings into unforgettable affairs.
-              </p>
-              <p className="text-2xl md:text-3xl font-semibold leading-relaxed mb-6">
-                Our portfolio spans over 500 luxury events nationwide — from rose-garden weddings in Napa Valley to executive galas in Manhattan. Each event is a reflection of our commitment to precision, storytelling, and elevated design.
-              </p>
-              <p className="text-2xl md:text-3xl font-semibold leading-relaxed mb-6">
-                What began as a bold vision in a modest studio has grown into a legacy brand trusted by clients who value clarity, leadership, and luxury. Our journey has been shaped by breakthrough moments, strategic pivots, and a relentless pursuit of excellence.
-              </p>
-              <p className="text-2xl md:text-3xl font-semibold leading-relaxed mb-6">
-                Today, Luxe Affairs stands as a beacon for intentional celebration. Whether you're planning a milestone or elevating your brand through experience, we’re here to lead with clarity — and glow with impact.
-              </p>
-              <p className="text-2xl italic text-pink-300">
-                Designed with clarity. Built for legacy. ✨
-              </p>
-            </div>
-          </section>
+          <p className="text-2xl font-bold leading-relaxed drop-shadow-xl mb-6">
+            With decades of combined expertise in hospitality, design, and event
+            production, our team brings a level of professionalism and artistry that
+            transforms ordinary occasions into unforgettable milestones. We collaborate
+            closely with clients, honoring their vision while elevating it with our
+            signature Luxe Affairs touch — intentional, polished, and deeply personal.
+          </p>
 
-          {/* Gallery Preview Strip */}
-          <section className="w-full px-6 md:px-20 mb-24">
-            <div className="max-w-6xl mx-auto text-center">
-              <h2 className="text-4xl md:text-5xl font-extrabold text-pink-300 mb-8 shimmer-text pulse-glow">
-                Event Highlights
-              </h2>
+          <p className="text-2xl italic text-pink-300 drop-shadow-xl">
+            Luxe Affairs is where clarity becomes beauty, and beauty becomes legacy.
+          </p>
+        </div>
+      </section>
 
-              <div className="flex space-x-6 overflow-x-auto pb-4 scroll-snap-x snap-mandatory">
-                {[
-                  { src: "/images/banquet-bg5.jpeg", alt: "Banquet Elegance 5" },
-                  { src: "/images/banquet-bg6.jpeg", alt: "Banquet Elegance 6" },
-                  { src: "/images/banquet-bg7.jpeg", alt: "Banquet Elegance 7" },
-                  { src: "/images/banquet-bg9.jpeg", alt: "Banquet Elegance 9" },
-                  { src: "/images/banquet-bg11.jpeg", alt: "Banquet Elegance 11" },
-                  { src: "/images/banquet-bg12.jpeg", alt: "Banquet Elegance 12" },
-                ].map((img, index) => (
-                  <div
-                    key={index}
-                    className="min-w-[280px] md:min-w-[320px] snap-start relative group"
-                  >
-                    <img
-                      src={img.src}
-                      alt={img.alt}
-                      className="rounded-2xl shadow-xl hover:scale-105 transition-transform duration-300 cursor-pointer"
-                    />
-                    <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center rounded-2xl">
-                      <span className="text-white text-lg font-semibold">{img.alt}</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
 
-              <div className="mt-6">
-                <a
-                  href="/gallery"
-                  className="inline-block bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-6 rounded-xl shadow-lg transition"
-                >
-                  View Full Gallery
-                </a>
-              </div>
-            </div>
-          </section>
-        </main>
+      {/* PARTNER SLIDER SECTION */}
+<section className="w-full py-20 bg-black/40 backdrop-blur-xl mb-24">
+  <h2 className="text-4xl md:text-5xl font-extrabold text-center text-pink-300 mb-12 drop-shadow-xl">
+    Trusted Partners & Collaborators
+  </h2>
 
-        {/* Section Divider Spacer */}
-<div className="w-full my-16 flex justify-center">
-  <div className="h-1 w-24 md:w-32 bg-pink-300 rounded-full animate-pulse" />
-</div>
+  <div className="relative w-full overflow-hidden">
 
-        
+    {/* Gradient Fade Left */}
+    <div className="absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-black/70 to-transparent z-10 pointer-events-none"></div>
 
-        {/* Location, Contact, Follow Section */}
-<section className="w-full px-6 md:px-20 mb-24">
-  <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center text-white">
-    {/* Location */}
-    <div className="bg-purple-800 rounded-2xl p-6 shadow-xl hover:shadow-pink-500/30 transition">
-      <h3 className="text-2xl font-bold text-pink-300 mb-4">📍 Location</h3>
-      <p className="text-lg mb-2">Charlotte, North Carolina</p>
-      <a
-        href="https://maps.google.com/?q=Charlotte+NC"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-pink-400 underline hover:text-pink-300"
-      >
-        View on Google Maps
-      </a>
-    </div>
+    {/* Gradient Fade Right */}
+    <div className="absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-black/70 to-transparent z-10 pointer-events-none"></div>
 
-    {/* Contact */}
-    <div className="bg-purple-800 rounded-2xl p-6 shadow-xl hover:shadow-pink-500/30 transition">
-      <h3 className="text-2xl font-bold text-pink-300 mb-4">📞 Contact</h3>
-      <p className="text-lg mb-2">
-        Email:{" "}
-        <a
-          href="mailto:info@luxeaffairs.com"
-          className="text-pink-400 underline hover:text-pink-300"
-        >
-          info@luxeaffairs.com
-        </a>
-      </p>
-      <p className="text-lg">
-        Phone:{" "}
-        <a
-          href="tel:+17045551234"
-          className="text-pink-400 underline hover:text-pink-300"
-        >
-          (704) 555-1234
-        </a>
-      </p>
-    </div>
+    {/* TRUE Seamless Marquee */}
+    <div className="marquee">
 
-    {/* Follow */}
-    <div className="bg-purple-800 rounded-2xl p-6 shadow-xl hover:shadow-pink-500/30 transition">
-      <h3 className="text-2xl font-bold text-pink-300 mb-4">📲 Follow</h3>
-      <p className="text-lg mb-2">
-        Instagram:{" "}
-        <a
-          href="https://instagram.com/luxeaffairs"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-pink-400 underline hover:text-pink-300"
-        >
-          @luxeaffairs
-        </a>
-      </p>
-      <p className="text-lg mb-2">
-        Facebook:{" "}
-        <a
-          href="https://facebook.com/luxeaffairs"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-pink-400 underline hover:text-pink-300"
-        >
-          Luxe Affairs
-        </a>
-      </p>
-      <p className="text-lg">
-        TikTok:{" "}
-        <a
-          href="https://tiktok.com/@luxeaffairs"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-pink-400 underline hover:text-pink-300"
-        >
-          @luxeaffairs
-        </a>
-      </p>
+      {/* FIRST SET */}
+      {[
+        "walmart.png",
+        "target.png",
+        "homedepot.png",
+        "vivia.png",
+        "att.png",
+        "sunrun.png",
+        "wellcare.png",
+        "humana.png",
+      ].map((logo, index) => (
+        <div key={`set1-${index}`} className="logo-card">
+          <img
+            src={`/partners/${logo}`}
+            alt={logo}
+            className="logo-img"
+          />
+        </div>
+      ))}
+
+      {/* DUPLICATE SET (REQUIRED FOR SEAMLESS LOOP) */}
+      {[
+        "walmart.png",
+        "target.png",
+        "homedepot.png",
+        "vivia.png",
+        "att.png",
+        "sunrun.png",
+        "wellcare.png",
+        "humana.png",
+      ].map((logo, index) => (
+        <div key={`set2-${index}`} className="logo-card">
+          <img
+            src={`/partners/${logo}`}
+            alt={logo}
+            className="logo-img"
+          />
+        </div>
+      ))}
+
     </div>
   </div>
 </section>
 
 
-        {/* Footer */}
-        <footer className="w-full">
-          <Footer />
-        </footer>
-      </div>
+{/* EVENT STYLES TITLE */}
+<h2 className="text-4xl md:text-5xl font-extrabold text-center text-pink-300 mb-16 drop-shadow-xl">
+  Event Styles
+</h2>
+
+{[
+  {
+    title: "Celebrating Life’s Milestones",
+    description:
+      "Luxe Affairs curates birthday experiences that feel personal, vibrant, and unforgettable. From intimate dinners to lavish surprise parties, we design every detail to reflect your story and style.",
+    image: "/eventStyles/birthday.jpg",
+  },
+  {
+    title: "Designed for Forever",
+    description:
+      "Our wedding experiences are built on clarity, elegance, and emotional impact. From venue styling to vendor coordination, Luxe Affairs ensures your day feels cinematic, sacred, and seamless.",
+    image: "/eventStyles/wedding.jpg",
+  },
+  {
+    title: "Professionalism with Presence",
+    description:
+      "Luxe Affairs transforms corporate gatherings into branded experiences. Whether it’s a gala, retreat, or launch, we deliver clarity, polish, and elevated hospitality that reflects your mission.",
+    image: "/eventStyles/corporate.jpg",
+  },
+  {
+    title: "Intimate Moments, Elevated",
+    description:
+      "We specialize in private affairs that feel soulful and intentional. Luxe Affairs blends ambiance, culinary artistry, and emotional resonance to create unforgettable evenings.",
+    image: "/eventStyles/private.jpg",
+  },
+  {
+    title: "Celebrating Legacy",
+    description:
+      "Whether it’s one year or fifty, Luxe Affairs honors your journey with elegance and intimacy. We design anniversary events that reflect your love story and elevate every moment.",
+    image: "/eventStyles/anniversary.jpg",
+  },
+  {
+    title: "Graceful Farewells",
+    description:
+      "Luxe Affairs offers compassionate, dignified event planning for memorials and celebrations of life. We handle every detail with sensitivity, clarity, and respect.",
+    image: "/eventStyles/memorial.jpg",
+  },
+].map((event, index) => (
+  <section
+    key={index}
+    className={`relative max-w-6xl mx-auto mb-24 px-4 flex flex-col md:flex-row gap-10 items-center ${
+      index % 2 === 1 ? "md:flex-row-reverse" : ""
+    }`}
+  >
+    {/* IMAGE — CLEAN, NO SHADOWS */}
+    <img
+      src={event.image}
+      alt={event.title}
+      className="h-72 md:h-96 w-full object-cover rounded-2xl"
+    />
+
+    {/* TEXT — UNCHANGED */}
+    <div className="space-y-4 z-10">
+      <h2 className="text-3xl md:text-4xl font-extrabold text-pink-200 drop-shadow-[0_3px_6px_rgba(0,0,0,0.9)]">
+        {event.title}
+      </h2>
+
+      <p className="text-white text-lg leading-relaxed font-semibold drop-shadow-[0_3px_6px_rgba(0,0,0,0.9)]">
+        {event.description}
+      </p>
+    </div>
+  </section>
+))}
+
+{/* LOCATION SECTION */}
+<section className="mt-20 text-center">
+
+  {/* TITLE + ADDRESS */}
+  <div className="max-w-4xl mx-auto px-4 mb-10">
+    <h2 className="text-3xl md:text-4xl font-extrabold text-pink-200 drop-shadow-[0_3px_6px_rgba(0,0,0,0.9)]">
+      Visit Luxe Affairs Charlotte
+    </h2>
+
+    <p className="text-white text-lg font-semibold drop-shadow-[0_3px_6px_rgba(0,0,0,0.9)] mt-3">
+      615 N Tryon St, Charlotte, NC 28202
+    </p>
+  </div>
+
+  {/* FULL-WIDTH MAP */}
+  <div className="w-full h-80 md:h-[450px]">
+    <iframe
+      title="Luxe Affairs Charlotte Location"
+      width="100%"
+      height="100%"
+      style={{ border: 0 }}
+      loading="lazy"
+      allowFullScreen
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2068.982989036!2d-80.837251!3d35.229003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8856a02c6e0f7d2f%3A0x7f3f0e6e8d3d4e!2s615%20N%20Tryon%20St%2C%20Charlotte%2C%20NC%2028202!5e0!3m2!1sen!2sus!4v1700000000000"
+    ></iframe>
+  </div>
+
+  {/* SACRAMENTO COMING SOON */}
+  <p className="text-white/80 text-sm italic font-semibold mt-4 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+    Sacramento location coming soon.
+  </p>
+
+  {/* CTA */}
+  <div className="mt-12 px-4">
+    <h3 className="text-2xl md:text-3xl font-extrabold text-white mb-4 drop-shadow-[0_3px_6px_rgba(0,0,0,0.9)]">
+      Ready to Create Your Luxe Experience?
+    </h3>
+
+    <a
+      href="/inquire"
+      className="inline-block bg-pink-500 hover:bg-pink-600 text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 shadow-lg"
+    >
+      Inquire Now
+    </a>
+  </div>
+
+</section>
     </div>
   );
 }

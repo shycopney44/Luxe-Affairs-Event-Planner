@@ -13,7 +13,8 @@ export default function BackgroundSlideshow() {
   useEffect(() => {
     const timer = setInterval(() => {
       setIndex((prev) => (prev + 1) % images.length);
-    }, 6000); // Change every 6 seconds
+    }, 5000);
+
     return () => clearInterval(timer);
   }, []);
 
@@ -23,14 +24,15 @@ export default function BackgroundSlideshow() {
         <img
           key={i}
           src={src}
-          alt={`background-${i}`}
-          className={`absolute w-full h-full object-cover transition-opacity duration-1000 ${
+          alt=""
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1500ms] ${
             i === index ? "opacity-100" : "opacity-0"
           }`}
         />
       ))}
-      {/* Optional overlay for color harmony */}
-      <div className="absolute inset-0 bg-gradient-to-b from-purple-900/40 to-pink-500/30 z-10" />
+
+      {/* Optional dark overlay */}
+      <div className="absolute inset-0 bg-black/40" />
     </div>
   );
 }
