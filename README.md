@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+# Luxe Affairs Event Planner  
+A full‑stack luxury event planning platform featuring a cinematic React frontend, secure Node/Express backend, MongoDB database, and a protected admin dashboard for managing inquiries, reviews, users, and masterclass signups.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+## ✨ Features
 
-In the project directory, you can run:
+### 🎨 Frontend (React + Tailwind)
+- Cinematic background slideshow
+- Luxury‑coded UI with glassmorphism and smooth transitions
+- Public pages: Home, Gallery, Lighting, Montage, Testimonials, Contact, Masterclass Signup
+- Review submission + masterclass signup forms
+- Fully responsive design
 
-### `npm start`
+### 🔐 Admin Dashboard
+- Secure JWT authentication
+- Admin login page
+- Protected routes using `RequireAuth`
+- CRUD management for:
+  - Inquiries
+  - Masterclass signups
+  - Reviews
+  - Users
+- Clean table UI with delete actions
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### ⚙️ Backend (Node + Express)
+- REST API with modular routes
+- JWT authentication middleware
+- MongoDB models for all entities
+- Admin seeder for first‑time login
+- CORS + security best practices
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 🗄️ Database (MongoDB Atlas)
+- Cloud‑hosted database
+- Mongoose models + schema validation
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🚀 Tech Stack
 
-### `npm run build`
+| Layer | Technologies |
+|-------|--------------|
+| Frontend | React, React Router, Axios, TailwindCSS |
+| Backend | Node.js, Express.js, JWT, Bcrypt |
+| Database | MongoDB Atlas, Mongoose |
+| Deployment | Render (backend), Vercel (frontend) |
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 📁 Project Structure
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
