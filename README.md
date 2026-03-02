@@ -49,4 +49,71 @@ A full‑stack luxury event planning platform featuring a cinematic React fronte
 
 ## 📁 Project Structure
 
+event-planner/
+│
+├── backend/
+│   ├── config/
+│   │   └── db.js
+│   ├── controllers/
+│   │   ├── inquiryController.js
+│   │   ├── masterclassController.js
+│   │   ├── reviewController.js
+│   │   └── userController.js
+│   ├── middleware/
+│   │   ├── authMiddleware.js
+│   │   └── errorHandler.js
+│   ├── models/
+│   │   ├── Inquiry.js
+│   │   ├── Masterclass.js
+│   │   ├── Review.js
+│   │   └── User.js
+│   ├── routes/
+│   │   ├── authRoutes.js
+│   │   ├── inquiryRoutes.js
+│   │   ├── masterclassRoutes.js
+│   │   ├── reviewRoutes.js
+│   │   └── userRoutes.js
+│   ├── seedAdmin.js
+│   ├── server.js
+│   └── package.json
+│
+├── src/
+│   ├── admin/
+│   │   ├── DashboardLayout.jsx
+│   │   ├── RequireAuth.jsx
+│   │   └── pages/
+│   │       ├── Inquiries.jsx
+│   │       ├── Masterclasses.jsx
+│   │       ├── Reviews.jsx
+│   │       └── Users.jsx
+│   ├── api/
+│   │   └── axios.js
+│   ├── components/
+│   │   ├── BackgroundSlideshow.jsx
+│   │   ├── Footer.jsx
+│   │   ├── Header.jsx
+│   │   └── (other UI components)
+│   ├── pages/
+│   │   ├── Home.jsx
+│   │   ├── Gallery.jsx
+│   │   ├── Lighting.jsx
+│   │   ├── Montage.jsx
+│   │   ├── Testimonials.jsx
+│   │   ├── Contact.jsx
+│   │   ├── Inquire.jsx
+│   │   ├── SubmitReview.jsx
+│   │   └── MasterclassSignup.jsx
+│   ├── App.jsx
+│   ├── index.js
+│   └── index.css
+│
+├── public/
+│   ├── images/
+│   ├── favicon.ico
+│   └── index.html
+│
+├── .gitignore
+├── package.json
+├── package-lock.json
+└── README.md
 
