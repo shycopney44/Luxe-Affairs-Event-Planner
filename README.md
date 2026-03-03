@@ -129,6 +129,9 @@ event-planner/
 ## 🔧 Environment Variables
 
 Create a `.env` file inside `/backend`:
+MONGO_URI=your_mongo_connection_string
+JWT_SECRET=your_secret_key
+NODE_ENV=development
 
 These same variables must be added to Render for production.
 
@@ -137,10 +140,15 @@ These same variables must be added to Render for production.
 ## 🧪 Running the Project Locally
 
 ### Install dependencies
+npm install
+cd backend && npm install
 
 ### Start backend
+cd backend
+npm start
 
 ### Start frontend
+npm start
 
 Frontend runs at:  
 `http://localhost:3000`
@@ -153,9 +161,11 @@ Backend runs at:
 ## 🔐 Admin Login
 
 After running the seeder:
+node seedAdmin.js
 
 Default admin credentials:
-
+Email: admin@luxeaffairs.com
+Password: Admin123!
 
 ---
 
