@@ -7,12 +7,15 @@ backend/node_modules/
 # ============================
 # Environment Variables
 # ============================
-.env
+# KEEP backend env private
 backend/.env
+
+# IGNORE local-only env overrides
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
+
 
 # ============================
 # Build Output
@@ -44,3 +47,4 @@ coverage/
 # ============================
 .pnp
 .pnp.js
+node_modules
