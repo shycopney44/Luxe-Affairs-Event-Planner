@@ -3,11 +3,12 @@ A full‑stack luxury event planning platform featuring a cinematic React fronte
 
 ---
 
-## 🔗 Live Demo  
-Frontend: https://your-frontend-url  
-Backend Health Check: https://your-backend-url/api/health  
+🔗 Live Demo
 
-(Replace these once deployment is complete.)
+Frontend: https://luxe-affairs-event-planner.vercel.app
+Admin Dashboard: https://luxe-affairs-event-planner.vercel.app/admin/login
+Backend Health Check: https://luxe-affairs-backend.onrender.com/api/health
+
 
 ---
 
