@@ -8,7 +8,7 @@ export default function Contact() {
     message: "",
   });
 
-  const [submitted, setSubmitted] = useState(false); // ⭐ NEW
+  const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -19,7 +19,6 @@ export default function Contact() {
     e.preventDefault();
     console.log("Contact Form Submitted:", formData);
 
-    // ⭐ REPLACE ALERT WITH IN‑PAGE SUCCESS MESSAGE
     setSubmitted(true);
 
     setFormData({
@@ -33,7 +32,7 @@ export default function Contact() {
   return (
     <div className="min-h-screen text-white">
 
-      {/* ⭐ FULL-WIDTH MAP BANNER */}
+      {/* Map Banner */}
       <div className="w-full h-[50vh] md:h-[60vh] lg:h-[70vh]">
         <iframe
           title="Charlotte Event Venues Map"
@@ -42,7 +41,7 @@ export default function Contact() {
         ></iframe>
       </div>
 
-      {/* ⭐ CONTACT CONTENT */}
+      {/* Contact Content */}
       <div className="bg-gradient-to-br from-black via-purple-900 to-purple-700 px-6 pt-20 pb-20">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
 
@@ -52,17 +51,17 @@ export default function Contact() {
 
             <div className="space-y-4 text-white text-lg">
               <div>
-                <h3 className="font-semibold text-purple-200">EVENT & BUSINESS ENQUIRIES</h3>
+                <h3 className="font-semibold text-purple-200">EVENT & BUSINESS INQUIRIES</h3>
                 <p>For planning, collaborations, or Luxe Affairs bookings:</p>
                 <p className="font-medium">events@luxeaffairs.com</p>
               </div>
               <div>
-                <h3 className="font-semibold text-purple-200">PRESS & MEDIA ENQUIRIES</h3>
+                <h3 className="font-semibold text-purple-200">PRESS & MEDIA INQUIRIES</h3>
                 <p>For interviews, podcast invites, or media features:</p>
                 <p className="font-medium">press@luxeaffairs.com</p>
               </div>
               <div>
-                <h3 className="font-semibold text-purple-200">GENERAL ENQUIRIES</h3>
+                <h3 className="font-semibold text-purple-200">GENERAL INQUIRIES</h3>
                 <p>For anything else — we’d love to hear from you:</p>
                 <p className="font-medium">hello@luxeaffairs.com</p>
               </div>
@@ -86,7 +85,7 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* ⭐ RIGHT SIDE — FORM OR SUCCESS MESSAGE */}
+          {/* Right Side — Form or Success Message */}
           {submitted ? (
             <div className="bg-white/10 backdrop-blur-xl border border-white/20 p-8 rounded-xl shadow-xl text-center">
               <h3 className="text-2xl font-semibold text-yellow-300 mb-3 drop-shadow-xl">
